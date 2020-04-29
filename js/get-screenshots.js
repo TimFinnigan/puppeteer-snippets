@@ -8,8 +8,7 @@ const puppeteer = require("puppeteer");
     await page.screenshot({ path: "../screenshot.png" });
     await browser.close();
   } catch (err) {
-    console.log(error(err));
+    console.log(err);
     await browser.close();
-    console.log(error("Closed"));
   }
 })();

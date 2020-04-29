@@ -24,16 +24,15 @@ var fs = require("fs");
       }
       return titleLinkArray;
     });
-    console.log(news);
+
     await browser.close();
+    
     fs.writeFile("../hackernews.json", JSON.stringify(news), function (err) {
       if (err) throw err;
-      console.log("Saved!");
+      console.log("Saved JSON");
     });
-    console.log(success("Browser Closed"));
   } catch (err) {
-    console.log(error(err));
+    console.log(err);
     await browser.close();
-    console.log(error("Browser Closed"));
   }
 })();
